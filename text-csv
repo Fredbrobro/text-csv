@@ -1,0 +1,23 @@
+# -*- coding: utf-8 -*-
+"""
+Created on Thu Feb 21 14:27:57 2019
+
+@author: pears
+"""
+import csv
+import pyperclip
+
+#empy list that I will add each row to individually using line
+lines = []  
+#less memory intensive way of opening, reading and closing a file
+with open('ENTERNAMEINPUT.txt','rt') as infile:
+    #Here line is a variable specifying each row in the text file    
+    for line in infile:
+        lines.append(line) #This says that as program goes through line, add it to the list 
+        test = lines[50:2069] #These are the indices which correspond to rows 50 - 2060
+        #for element in lines: **element slowed down the operation considerably!!!**           
+        with open('ENTERNAMEOUTPUT.csv','w') as important:
+            c = ''.join(test)
+            contents2 = important.write(c)
+            #b = c.replace(",","") # This line and the following are if you would like to copy the text directly to the clipboard  
+            #pyperclip.copy(b) # You can choose to use this or not
